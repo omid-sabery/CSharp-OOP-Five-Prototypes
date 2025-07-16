@@ -2,31 +2,35 @@
 
 namespace FivePrototypes
 {
+    // Card color options
     public enum CardColor { Red, Green, Blue, Yellow }
+    // Card rank options, including symbols
     public enum CardRank
     { 
         One, Two, Three, Four, Five,
         Six, Seven, Eight, Nine, Ten,
         Dollar, Percent, Caret, Ampersand
     }
+
+    // Represents a playing card with color and rank
     class Card
     {
-        // Properties
         public CardColor Color  { get; }
         public CardRank Rank  { get; }
 
-        // Constructors
+        // Constructor
         public Card(CardColor color, CardRank rank)
         {
             Color = color;
             Rank = rank;
         }
 
-        // Methods
+        // Returns true if the card is a number card
         public bool IsNumberCard() => (Rank <= CardRank.Ten);
+        // Returns true if the card is a symbol card
         public bool IsSymbolCard() => (Rank > CardRank.Ten);
 
-        // Override ToString()
+        // String representation for easy display
         public override string ToString()
         {
             string rankStr = Rank switch
@@ -38,8 +42,6 @@ namespace FivePrototypes
                 _ => Rank.ToString()
             };
             return $"The {Color} {rankStr}";
-        
         }
-        
     }
 }

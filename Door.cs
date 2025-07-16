@@ -2,23 +2,27 @@
 
 namespace FivePrototypes
 {
-    enum DoorStatus { Open, Closed, Locked}
+    // Possible door states
+    enum DoorStatus { Open, Closed, Locked }
+
+    // Simulates a door with passcode protection and state management
     internal class Door
     {
-        // Fields
         private int _passCode;
         private DoorStatus _currentStatus;
-        // Properties
-        
+
+        // Current status of the door
         public DoorStatus CurrentStatus {
             get { return _currentStatus; }
         }
-        // Constructor
+
+        // Initialize door with a passcode
         public Door(int passCode)
         {
             _passCode = passCode;
         }
-        // Methods
+
+        // Change the passcode if the current one is correct
         public void ResetPassCode(int currentPassCode, int newPassCode)
         {
             if (currentPassCode == _passCode)
@@ -30,6 +34,7 @@ namespace FivePrototypes
             }
         }
 
+        // Close the door if not locked
         public void Close()
         {
             if (_currentStatus != DoorStatus.Locked)
@@ -43,6 +48,7 @@ namespace FivePrototypes
             }
         }
 
+        // Open the door if not locked
         public void Open()
         {
             if (_currentStatus != DoorStatus.Locked)
@@ -56,8 +62,10 @@ namespace FivePrototypes
             }
         }
 
+        // Lock the door
         public void Lock()
-        {   if (_currentStatus != DoorStatus.Locked)
+        {   
+            if (_currentStatus != DoorStatus.Locked)
             {
                 _currentStatus = DoorStatus.Locked;
                 Console.WriteLine("The door was locked.");
@@ -67,6 +75,7 @@ namespace FivePrototypes
             }
         }
 
+        // Unlock the door if passcode is correct
         public void Unlock(int currentPassCode)
         {
             if (_currentStatus != DoorStatus.Locked)
@@ -83,7 +92,7 @@ namespace FivePrototypes
             }
         }
 
-        // Public method to run your menu loop
+        // Interactive menu for door operations
         public void Run()
         {
             while (true)

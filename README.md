@@ -1,41 +1,89 @@
-﻿# 🗝️ The Five Prototypes
+﻿# 🧪 Csharp-OOP-Five-Prototypes
 
-Welcome, adventurer.
-
-You have entered **The Catacombs of the Class**, where five ancient pedestals await reconstruction. Only by mastering the core principles of object-oriented programming (OOP) in C# can you unlock the sealed door and proceed to the **Fountain of Objects**.
-
-This repository contains five foundational class-building challenges, each representing a lost **Prototype** you must reassemble. Each "Boss Battle" challenges your understanding of classes, properties, constructors, enums, control flow, and encapsulation.
+This repository contains five object-oriented C# prototypes built using **.NET 9** and developed in **Visual Studio Community 2022 (v17.14.9, 64-bit)**. Inspired by **RB Whitaker’s _The C# Player’s Guide_**, each prototype explores core programming concepts like encapsulation, enums, validation, state management, and interactive console programming.
 
 ---
 
-## 🧩 The Prototypes
+## 📁 Project Overview
 
-### 1. **The Point** – *75 XP*
-Create a 2D `Point` class with constructors and immutable coordinates. Understand the purpose of immutability in value objects.
-
-### 2. **The Color** – *100 XP*
-Craft a `Color` class using RGB channels. Learn the difference between static properties and instance data.
-
-### 3. **The Card** – *100 XP*
-Model a card using `enum` types for color and rank. Generate a full deck and explore classification logic (number vs. symbol).
-
-### 4. **The Door** – *100 XP*
-Build a secure `Door` class with state transitions and passcode management. Practice condition-based methods and user interaction.
-
-### 5. **The Password Validator** – *100 XP*
-Design a `PasswordValidator` class that checks password rules. Learn to work with characters, validation logic, and input loops.
+| Prototype           | Description |
+|---------------------|-------------|
+| 🟢 `Point`          | Represents 2D coordinates using immutable properties. Demonstrates value-like class behavior. |
+| 🔴 `Color`          | Models RGB color values with predefined static options and full encapsulation. |
+| 🃏 `Card`           | Combines enums and class logic to simulate cards with color and rank (numbers and symbols). |
+| 🚪 `Door`           | Interactive passcode-protected door simulation with state transitions (open, close, lock, unlock). |
+| 🔐 `PasswordValidator` | Enforces custom password rules using regular expressions and logic. Fully interactive via console. |
 
 ---
 
-## 🛠️ Technologies
+## 🧠 Skills Demonstrated
 
-- Language: **C#**
-- Tools: .NET CLI / Visual Studio / Any C# IDE
+### 🧑‍💻 Technical Skills
+- C#
+- .NET 9
+- Object-Oriented Programming (OOP)
+- Console Application Development
+- Custom Data Structures (`class`, `enum`)
+- Regular Expressions (Regex)
+- User Input Handling
+- Input Validation
+- Basic Security Concepts (password rules)
+
+### 🧱 Software Design Concepts
+- Encapsulation
+- Separation of Concerns
+- Immutability (read-only properties)
+- Clean code practices (e.g., `ToString()` overrides)
+
+### ⚙️ Tools & Environment
+- Microsoft Visual Studio 2022 (v17.14.9)
+- .NET CLI
+- Git (if version-controlled)
+
+### 🧩 Soft & Transferable Skills
+- Problem Solving
+- Code Design Thinking
+- Interactive CLI Workflows
+
+---
+
+## 🔐 Password Rules
+
+The `PasswordValidator` enforces these rules:
+
+- Password must be **between 6 and 13 characters**
+- Must contain at least one:
+  - Lowercase letter
+  - Uppercase letter (excluding `'T'`)
+  - Digit
+- Must **not** contain:
+  - `'T'`
+  - `'&'`
+
+### ✔️ Valid Examples
+- `Abc123`
+- `GoodPwd9`
+- `Hello1U`
+
+### ❌ Invalid Examples
+- `Tpass123` → contains `'T'`
+- `abc123` → no uppercase letter
+- `123456` → no letters
+- `A&c12` → too short and contains `'&'`
 
 ---
 
 ## 🚀 Getting Started
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/TheFivePrototypes.git
+### 📦 Prerequisites
+
+- [.NET 9 SDK](https://dotnet.microsoft.com/download)
+- Visual Studio 2022 or any C#-capable IDE
+- Git (optional)
+
+### ▶️ Run the Application
+
+```bash
+git clone https://github.com/omid-sabery/CSharp-OOP-Five-Prototypes.git
+cd Csharp-OOP-Five-Prototypes
+dotnet run

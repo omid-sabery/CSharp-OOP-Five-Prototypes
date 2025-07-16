@@ -1,13 +1,17 @@
-﻿using System.Text;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace FivePrototypes
 {
+    // Validates passwords based on custom rules
     internal class PasswordValidator
     {
+        // Regex pattern for password validation
         private static string _passwordPattern = @"^(?=.*[a-z])(?=.*[A-SU-Z])(?=.*\d)(?!.*(&|T)).{6,13}$";
+
+        // Returns a message describing password validity or issues
         private string Message(string password)
-        {   if (IsValidPassword(password))
+        {   
+            if (IsValidPassword(password))
                 return "Your password is a valid.";
             string message = "The password must:\n";
             if (!ContainsDigit(password))
@@ -26,6 +30,8 @@ namespace FivePrototypes
                 message += "\tbe at most 13 characters long!\n";
             return message;
         }
+
+        // Helper methods for password checks
         private bool ContainsDigit(string password) => password.Any(char.IsDigit);
         private bool ContainsLower(string password) => password.Any(char.IsLower);
         private bool ContainsUpper(string password) =>
@@ -35,8 +41,12 @@ namespace FivePrototypes
         private bool IsTooLong(string password) => password.Length > 13;
         private bool IsTooShort(string password) => password.Length < 6;
 
+        // Returns true if password matches all rules
         public static bool IsValidPassword(string password) => Regex.IsMatch(password, _passwordPattern);
+
         public PasswordValidator() { }
+
+        // Prompts user for a password and validates it interactively
         public void GetPassword()
         {
             Console.WriteLine("Welcome to the Secure Password Validator");
@@ -66,6 +76,7 @@ namespace FivePrototypes
                 Console.WriteLine("Try again.\n");
             }
         }
-
     }
 }
+
+

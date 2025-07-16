@@ -1,24 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using FivePrototypes;
 
 namespace FivePrototypes
 {
+    // Represents a 2D point with integer coordinates
     internal class Point
     {
-        // Properties
-        public int X { get;  }
-        public int Y { get;  }
+        // X coordinate (read-only)
+        public int X { get; }
+        // Y coordinate (read-only)
+        public int Y { get; }
 
-        // Constructors
+        // Constructor with coordinates
         public Point(int x, int y) { X = x; Y = y; }
+        // Default constructor (origin)
         public Point() { X = 0; Y = 0; }
 
-        // ToString override for easy viewing
+        // String representation for easy display
         public override string ToString() => $"({X}, {Y})";
     }
 }
