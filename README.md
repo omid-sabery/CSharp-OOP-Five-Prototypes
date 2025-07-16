@@ -33,6 +33,7 @@ This repository contains five object-oriented C# prototypes built using **.NET 9
 - Encapsulation
 - Separation of Concerns
 - Immutability (read-only properties)
+- Method Overriding (custom `ToString()` for clean output)
 - Clean code practices (e.g., `ToString()` overrides)
 
 ### ⚙️ Tools & Environment
