@@ -5,7 +5,7 @@
     { 
         One, Two, Three, Four, Five,
         Six, Seven, Eight, Nine, Ten,
-        Dollor, Percent, Caret, Ampersand
+        Dollar, Percent, Caret, Ampersand
     }
     class Card
     {
@@ -24,5 +24,20 @@
         public bool IsNumberCard() => (Rank <= CardRank.Ten);
         public bool IsSymbolCard() => (Rank > CardRank.Ten);
 
+        // Override ToString()
+        public override string ToString()
+        {
+            string rankStr = Rank switch
+            {
+                CardRank.Ampersand => "&",
+                CardRank.Caret => "^",
+                CardRank.Dollar => "$",
+                CardRank.Percent => "%",
+                _ => Rank.ToString()
+            };
+            return $"The {Color} {rankStr}";
+        
+        }
+        
     }
 }

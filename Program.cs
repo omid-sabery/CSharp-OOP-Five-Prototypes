@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using TicTacToe;
 
 namespace TicTacToe
@@ -18,6 +19,24 @@ namespace TicTacToe
 
             Console.WriteLine($"Cyan: {cyan}");
             Console.WriteLine($"Red: {red}");
+
+            var colors = Enum.GetValues<CardColor>();
+            var ranks = Enum.GetValues<CardRank>();
+
+            Card[] deck = new Card[colors.Length * ranks.Length];
+            int index = 0;
+            foreach (var color in colors)
+            {
+                foreach (var rank in ranks)
+                {
+                    deck[index++] = new Card(color, rank);
+                }
+            }
+
+            foreach (var card in deck)
+            {
+                Console.WriteLine(card);
+            }
 
         }
     }
