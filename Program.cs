@@ -46,6 +46,9 @@ namespace FivePrototypes
             // Run the UI from inside the class method
             door.Run();
 
+            PasswordValidator validator = new PasswordValidator();
+            validator.GetPassword();
+
         }
     }
 }
