@@ -1,4 +1,6 @@
-﻿namespace TicTacToe
+﻿using FivePrototypes;
+
+namespace FivePrototypes
 {
     public enum CardColor { Red, Green, Blue, Yellow }
     public enum CardRank

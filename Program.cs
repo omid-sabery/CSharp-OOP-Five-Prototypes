@@ -1,8 +1,6 @@
-﻿using System;
-using System.Drawing;
-using TicTacToe;
+﻿using FivePrototypes;
 
-namespace TicTacToe
+namespace FivePrototypes
 {
     internal class Program
     {
@@ -37,6 +35,16 @@ namespace TicTacToe
             {
                 Console.WriteLine(card);
             }
+
+
+            Console.Write("Set a password for the door: ");
+            if (!int.TryParse(Console.ReadLine(), out int initialCode))
+                initialCode = 1234;
+
+            Door door = new Door(initialCode);
+
+            // Run the UI from inside the class method
+            door.Run();
 
         }
     }

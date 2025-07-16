@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TicTacToe
+using FivePrototypes;
+
+namespace FivePrototypes
 {
     internal class Point
     {

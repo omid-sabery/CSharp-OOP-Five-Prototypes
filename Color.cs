@@ -1,4 +1,6 @@
-﻿namespace TicTacToe
+﻿using FivePrototypes;
+
+namespace FivePrototypes
 {
     internal class Color
     {
